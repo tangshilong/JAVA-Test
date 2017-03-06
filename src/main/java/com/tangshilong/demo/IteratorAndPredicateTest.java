@@ -4,10 +4,6 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import javax.sql.rowset.Predicate;
-
-import jdk.nashorn.internal.runtime.linker.LinkerCallSite;
-
 public class IteratorAndPredicateTest {
 
 	public static void main(String[] args) {
