@@ -16,7 +16,7 @@ import java.util.Set;
  */
 public class CollectionsTest {
 
-	@SuppressWarnings({ "unchecked", "rawtypes" })
+	@SuppressWarnings({ "unchecked", "rawtypes", "unused" })
 	public static void main(String[] args) {
 		ArrayList<Integer> nums = new ArrayList<>();
 		nums.add(2);
@@ -40,7 +40,7 @@ public class CollectionsTest {
 		System.out.println("使用新值替换数列中的旧值 ： " + Collections.replaceAll(nums, 6, 7));
 		// 线程安全集合
 		System.out.println("建立线程安全集合，解决多线程并发线程安全问题：");
-		Collections collections = (Collections) Collections.synchronizedCollection(new ArrayList());
+		Collections collectiwons = (Collections) Collections.synchronizedCollection(new ArrayList());
 		List list = Collections.synchronizedList(new ArrayList<>());
 		Set set = Collections.synchronizedSet(new HashSet<>());
 		Map map = Collections.synchronizedMap(new HashMap<>());
