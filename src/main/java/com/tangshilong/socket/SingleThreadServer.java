@@ -6,11 +6,15 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.SocketTimeoutException;
-
-public class ServerTest extends Thread {
+/**
+ * 单线程 阻塞
+ * @author tangshilong
+ *
+ */
+public class SingleThreadServer extends Thread {
 	private static ServerSocket serverSocket;
 
-	public ServerTest(Integer port) throws IOException {
+	public SingleThreadServer(Integer port) throws IOException {
 		serverSocket= new ServerSocket(port);
 		serverSocket.setSoTimeout(10000);;
 	}
@@ -37,12 +41,4 @@ public class ServerTest extends Thread {
 		}
 	}
 	
-	public static void main(String[] args) throws IOException {
-		try {
-			Thread thread = new ServerTest(10086);
-			thread.start();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
 }
