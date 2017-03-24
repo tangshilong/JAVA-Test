@@ -1,65 +1,53 @@
 package com.tangshilong.demo;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.io.UnsupportedEncodingException;
+import java.io.*;
 
 public class IOTest {
 
-	public static void main(String[] args) throws IOException {
-		/**
-		 * 字节流处理出入输出，8比特字节 FileInputStream
+    public static void main(String[] args) throws IOException {
+		/*
+		  字节流处理出入输出，8比特字节 FileInputStream
 		 */
 		copyFile1();
-		/**
-		 * 字符流处理输入输出，16位，一次读取两个字节 FileReader
+		/*
+		  字符流处理输入输出，16位，一次读取两个字节 FileReader
 		 */
-		copyeFile2();
-		/**
-		 * 控制台显示输入的字符 InputStreamReader
+		CopyFile2();
+		/*
+		  控制台显示输入的字符 InputStreamReader
 		 */
 		showInput();
-		/**
-		 * 文件输出流 FileInputStream
+		/*
+		  文件输出流 FileInputStream
 		 */
 		fileInOutPutStream();
-		/**
-		 * 获取文件列表
+		/*
+		  获取文件列表
 		 */
 		getFileList();
-		/**
-		 * bufferedReader 可以使用readline()
+		/*
+		  bufferedReader 可以使用readline()
 		 */
-		bufreredReaderTest();
+		bufferedReaderTest();
 	}
 
-	public static void bufreredReaderTest() throws UnsupportedEncodingException, FileNotFoundException, IOException {
+	private static void bufferedReaderTest() throws IOException {
 		BufferedReader br = new BufferedReader(
 				new InputStreamReader(new FileInputStream("E:\\test\\input.txt"), "UTF-8"));
 		String data;
-		while ((data = br.readLine()) != null) {
-			System.out.println(data);
-		}
+		while ((data = br.readLine()) != null) System.out.println(data);
 		br.close();
 	}
 
-	public static void getFileList() {
+	private static void getFileList() {
 		File file = new File("E:\\test");
 		String[] strings = file.list();
-		for (String string : strings) {
+		for (String string : strings != null ? strings : new String[0]) {
 			System.out.println(string + "");
 		}
 	}
 
-	public static void fileInOutPutStream() throws FileNotFoundException, IOException {
+	private static void fileInOutPutStream() throws IOException {
 		FileInputStream f1 = new FileInputStream("E:\\test\\input.txt");
 		// File file = new File("E:\\test\\output2.txt");E:\\test
 		OutputStream out = new FileOutputStream("E:\\test\\output2.txt");
@@ -77,9 +65,9 @@ public class IOTest {
 		f.close();
 	}
 
-	public static void showInput() {
+	private static void showInput() {
 		try {
-			InputStreamReader in = null;
+			InputStreamReader in;
 			in = new InputStreamReader(System.in);
 			System.out.println("Enter character: 'q' to quit.");
 			char c;
@@ -92,7 +80,8 @@ public class IOTest {
 		}
 	}
 
-	public static void copyeFile2() throws FileNotFoundException, IOException {
+
+    private static void CopyFile2() throws IOException{
 		FileReader in = null;
 		FileWriter out = null;
 		try {
@@ -102,18 +91,17 @@ public class IOTest {
 			while ((a = in.read()) != -1) {
 				out.write(a);
 			}
-			System.out.println("复制成功1");
-		} finally {
-			if (in != null) {
-				in.close();
-			}
+             System.out.println("复制成功1");
+
+        } finally {
+			if (in != null) in.close();
 			if (out != null) {
 				out.close();
 			}
 		}
 	}
 
-	public static void copyFile1() throws IOException {
+	private static void copyFile1() throws IOException {
 		FileInputStream in = null;
 		FileOutputStream out = null;
 		try {

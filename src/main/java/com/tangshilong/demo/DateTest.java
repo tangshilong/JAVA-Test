@@ -7,7 +7,6 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 
 public class DateTest {
-
 	@SuppressWarnings("static-access")
 	public static void main(String[] args) {
 		// ------下面是关于Clock的用法-----

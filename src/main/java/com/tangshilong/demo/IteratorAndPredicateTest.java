@@ -19,13 +19,12 @@ public class IteratorAndPredicateTest {
 
 		Iterator<String> iterator2 = list.iterator();
 		while (iterator2.hasNext()) {
-			String str = (String) iterator2.next();
+			String str = iterator2.next();
 			System.out.println(str + "\n");
 			if (str.equals("白杨很可爱")) {
 				iterator2.remove();// iterator.remove();只有iterator对象可以remove集合元素，用其他对象remove会报错。
 			}
-			str = "测试字符串";
-		}
+        }
 		System.out.println(list);
 
 		/*

@@ -17,9 +17,9 @@ public class SendEmail {
 	private static final String USER = "acm2011tsl@126.com";
 	private static final String PASSWORD = "m201212231314";// 授权码
 
-	public static String sendMail(String to) throws UnsupportedEncodingException {
+	private static void sendMail(String to) throws UnsupportedEncodingException {
 		try {
-			String pwd = getRandomString(6);// 生成6位随机字符串
+			String pwd = getRandomString();// 生成6位随机字符串
 			String html = "<div class='wrapper' style='width: 550px;margin: auto;'>"
 					+ "<div style='height: 20px;background-color: #FFE48D;'></div>"
 					+ "<div style='border-right: solid 1px #FFE48D;border-left: solid 1px #FFE48D;height: 200px;border-bottom: solid 1px #FFE48D;height: 200px;'>"
@@ -94,18 +94,16 @@ public class SendEmail {
 
 			Transport.send(message);
 			System.out.println("Sent message successfully....");
-			return pwd;
 		} catch (MessagingException mex) {
 			mex.printStackTrace();
 		}
-		return null;
 	}
 
-	public static String getRandomString(int length) { // length表示生成字符串的长度
+	private static String getRandomString() { // length表示生成字符串的长度
 		String base = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 		Random random = new Random();
-		StringBuffer sb = new StringBuffer();
-		for (int i = 0; i < length; i++) {
+		StringBuilder sb = new StringBuilder();
+		for (int i = 0; i < 6; i++) {
 			int number = random.nextInt(base.length());
 			sb.append(base.charAt(number));
 		}
