@@ -18,6 +18,5 @@ public class CalenderTest {
 		System.out.println("增加年份后时间为： " + calendar2.getTime());
 		System.out.println("获取年份为： " + calendar2.get(Calendar.YEAR));
 		System.out.println("获取最大月份为：" + calendar.getActualMaximum(Calendar.MONTH));
-		;
 	}
 }
