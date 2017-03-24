@@ -10,7 +10,6 @@ public class IteratorAndPredicateTest {
 		List<String> list = new ArrayList<>();
 		list.add("白杨是个好人");
 		list.add("白杨很可爱");
-		list.add("白杨很瘦");
 		/*
 		 * iterator 遍历
 		 */
