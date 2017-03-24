@@ -9,7 +9,8 @@ import java.math.BigDecimal;
  */
 public class BigDecimalTest {
 
-	public static void main(String[] args) {
+    @SuppressWarnings("BigDecimalMethodWithoutRoundingCalled")
+    public static void main(String[] args) {
 		BigDecimal a = new BigDecimal("0.05");
 		BigDecimal b = BigDecimal.valueOf(0.01);
 		BigDecimal c = new BigDecimal(0.05);
