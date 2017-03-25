@@ -91,7 +91,6 @@ public class SendEmail {
 			// message.setContent(mmp2);
 			// message.saveChanges();
 			// //发送邮件
-
 			Transport.send(message);
 			System.out.println("Sent message successfully....");
 		} catch (MessagingException mex) {

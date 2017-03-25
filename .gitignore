@@ -46,3 +46,7 @@ Network Trash Folder
 Temporary Items
 .apdisk
 /target/
+.idea/dataSources.local.xml
+.idea/dataSources.xml
+.idea/dataSources/
+.idea/workspace.xml
