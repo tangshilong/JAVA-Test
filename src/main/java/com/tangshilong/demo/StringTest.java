@@ -5,8 +5,8 @@ public class StringTest {
 	public static void main(String[] args) {
 		String string = "abdcde";
 		System.out.println(string.indexOf("c"));
-		System.out.println(string.indexOf("d",3));
 		System.out.println(string.substring(2, 3));
+		System.out.println(string.indexOf("d",3));
 		System.out.println(string.lastIndexOf("d"));
 		System.out.println(string.endsWith("e"));
 		System.out.println(string.hashCode());

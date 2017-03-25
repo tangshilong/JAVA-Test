@@ -50,3 +50,5 @@ Temporary Items
 .idea/dataSources.xml
 .idea/dataSources/
 .idea/workspace.xml
+
+/.gitignore
